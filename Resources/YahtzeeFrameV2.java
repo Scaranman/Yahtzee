@@ -12,7 +12,7 @@ public class YahtzeeFrameV2 extends JFrame implements ActionListener{
    
    ////////////////////////// Attributes ////////////////////////////   
    //Player array
-   private YahtzeeFrameV2 yf;
+   private YahtzeeFrameV2 nyf;
    Player[] players = new Player[2];
 
    // Current Player
@@ -81,7 +81,7 @@ public class YahtzeeFrameV2 extends JFrame implements ActionListener{
    private JMenuItem jmiAbout = new JMenuItem("About");
    private JMenuItem jmiHelp = new JMenuItem("Scoring");
    
-   private JMenuItem jmiNew = new JMenuItem("New Game");
+//    private JMenuItem jmiNew = new JMenuItem("New Game");
    private JMenuItem jmiQuit = new JMenuItem("Quit");
    
    // JButtons
@@ -152,7 +152,7 @@ public class YahtzeeFrameV2 extends JFrame implements ActionListener{
       jldice[4] = new JLabel("Die 5: ");
       
       // Add JMenuItems jmiNew & jmiQuit to the Jmenu jmFile
-      jmFile.add(jmiNew);
+//       jmFile.add(jmiNew);
       jmFile.add(jmiQuit);
       
       // Add JmenuItems jmiHelp & jmiAbout to the JMenu jmFile
@@ -310,7 +310,7 @@ public class YahtzeeFrameV2 extends JFrame implements ActionListener{
       // add ActionListeners to the JMenuItems
       jmiHelp.addActionListener(this);      
       jmiAbout.addActionListener(this);
-      jmiNew.addActionListener(this);
+//       jmiNew.addActionListener(this);
       jmiQuit.addActionListener(this);
       
       section[0].setSelected(true);
@@ -404,7 +404,8 @@ public class YahtzeeFrameV2 extends JFrame implements ActionListener{
    doNew - instantiates a new game
    */
    public void doNew(){
-      yf = new YahtzeeFrameV2();
+      this.dispose();
+      nyf = new YahtzeeFrameV2();
    }
    
    /**
@@ -489,7 +490,7 @@ public class YahtzeeFrameV2 extends JFrame implements ActionListener{
          score2 = 0; 
          numPlayers = 0;
          playerNum = 0;
-         numRounds = 12;
+         numRounds = 0;
          numRolls = 0;
       
       // reset rerolled
